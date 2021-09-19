@@ -39,6 +39,11 @@ def save_plot(df,file_name,model):
       model (python object): trained model
   """
   def _create_base_plot(df):
+    """Creates base plot of the trained model
+
+    Args:
+        df (pd:Dataframe): pandas dataframe
+    """
     df.plot(kind="scatter", x="x1", y="x2", c="y", s=100, cmap="winter")
     plt.axhline(y=0, color="black", linestyle="--", linewidth=1)
     plt.axvline(x=0, color="black", linestyle="--", linewidth=1)
