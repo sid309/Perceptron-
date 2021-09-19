@@ -1,5 +1,5 @@
 import numpy as np
-
+from tqdm import tqdm
 class Perceptron:
   def __init__(self,eta,epochs):
     self.eta=eta
@@ -12,7 +12,7 @@ class Perceptron:
     self.X=X
     self.Y=Y
     X_with_bias=np.c_[self.X,-np.ones((len(self.X),1))]
-    for epoch in range(self.epochs):
+    for epoch in tqdm(range(self.epochs),total=self.epochs,desc="training the model"):
       print("--"*10)
       print(f"for epoch: {epoch}")
       print("--"*10)
